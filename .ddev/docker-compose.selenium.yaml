@@ -1,0 +1,51 @@
+version: '3.6'
+
+services:
+  chrome:
+    container_name: ddev-${DDEV_SITENAME}-chrome
+    image: seleniarm/standalone-chromium:4.1.2-20220227
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    expose:
+      - 7900
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTPS_EXPOSE=7900:7900
+      - HTTP_EXPOSE=7910:7900
+    links:
+      - web:web
+      - web:drupal_chrome
+    external_links:
+      - ddev-router:${DDEV_SITENAME}.${DDEV_TLD}
+    volumes:
+      - ".:/mnt/ddev_config"
+
+  firefox:
+    container_name: ddev-${DDEV_SITENAME}-firefox
+    image: seleniarm/standalone-firefox:4.1.2-20220227
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    expose:
+      - 7901
+    environment:
+      - NO_VNC_PORT=7901
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTPS_EXPOSE=7901:7901
+      - HTTP_EXPOSE=7911:7901
+    links:
+      - web:web
+      - web:drupal_firefox
+    external_links:
+      - ddev-router:${DDEV_SITENAME}.${DDEV_TLD}
+    volumes:
+      - ".:/mnt/ddev_config"
+
+  web:
+    environment:
+      - SIMPLETEST_DB=mysql://db:db@ddev-${DDEV_SITENAME}-db:3306/db
+      - SIMPLETEST_BASE_URL=${DDEV_PRIMARY_URL}
+      - BROWSERTEST_OUTPUT_DIRECTORY=/tmp
+      - BROWSERTEST_OUTPUT_BASE_URL=${DDEV_PRIMARY_URL}
+      - MINK_DRIVER_ARGS_WEBDRIVER=["chrome", {"browserName":"chrome","chromeOptions":{"args":["--ignore-certificate-errors","--no-sandbox","--allow-insecure-localhost","--disable-dev-shm-usage"]}}, "http://chrome:4444/wd/hub"]

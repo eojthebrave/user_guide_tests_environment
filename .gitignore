@@ -120,3 +120,6 @@ Thumbs.db
 ## Ignore migration configuration files that we already have in our custom module
 config/migrate_plus.migration.dme_d7_*
 config/migrate_plus.migration.dmemigration_videoasset.yml
+/nightwatch.conf.js
+/phpcs.xml
+/phpstan.neon

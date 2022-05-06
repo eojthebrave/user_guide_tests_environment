@@ -9,6 +9,14 @@ This project consists of the configuration necessary to set up a DDEV-Local (Doc
 - Execute `ddev start` from the root directory
 - Followed by `ddev composer install`
 
+## Running the tests
+
+```shell
+ddev exec ./vendor/bin/phpunit --verbose -c web/core/ web/modules/contrib/user_guide_tests/tests/src/FunctionalJavascript/
+```
+
+While the tests are running you can visit https://user-guide-tests.ddev.site:7900 (password: secret) to watch them run in Chrome.
+
 ## Details
 
-In addition to a standard Drupal 9 + DDEV-Local setup this project provides an additional Docker container with Chromium installed and configuration for executing Drupal's functional test suite. The user_guide_tests project consists of a number of tests that step through the same process as outlined in the Drupal User Guide tutorials and generates language specific screenshots in the process.
+In addition to a standard Drupal 9 + DDEV-Local setup this project provides an additional Docker container with Chrome & Firefox installed and configuration for executing Drupal's functional test suite. The user_guide_tests project consists of a number of tests that step through the same process as outlined in the Drupal User Guide tutorials and generates language specific screenshots in the process.
