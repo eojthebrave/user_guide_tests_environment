@@ -20,3 +20,16 @@ While the tests are running you can visit https://user-guide-tests.ddev.site:790
 ## Details
 
 In addition to a standard Drupal 9 + DDEV-Local setup this project provides an additional Docker container with Chrome & Firefox installed and configuration for executing Drupal's functional test suite. The user_guide_tests project consists of a number of tests that step through the same process as outlined in the Drupal User Guide tutorials and generates language specific screenshots in the process.
+
+## Updating composer dependencies of user_guide_tests module
+
+Edit the root composer.json from this repo with something like:
+
+```json
+        "0": {
+            "type": "path",
+            "url": "/var/www/html/web/modules/contrib/user_guide_tests"
+        },
+```
+
+More info https://www.drupal.org/docs/develop/using-composer/tricks-for-using-composer-when-developing-a-contrib-module-locally
