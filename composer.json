@@ -9,7 +9,7 @@
         "chat": "https://www.drupal.org/node/314178"
     },
     "repositories": {
-        "0": {
+        "2": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
@@ -22,11 +22,12 @@
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
         "drupal/backup_migrate": "^5.0",
-        "drupal/core-composer-scaffold": "9.4.x-dev@dev",
-        "drupal/core-project-message": "9.4.x-dev@dev",
-        "drupal/core-recommended": "9.4.x-dev@dev",
-        "drupal/user_guide_tests": "dev-9.1.x",
-        "drush/drush": "^10.6",
+        "drupal/core-composer-scaffold": "9.5.x-dev@dev",
+        "drupal/core-project-message": "9.5.x-dev@dev",
+        "drupal/core-recommended": "9.5.x-dev@dev",
+        "drupal/upgrade_status": "^3.18",
+        "drupal/user_guide_tests": "10.0.x-dev@dev",
+        "drush/drush": "^11.0",
         "lullabot/drainpipe": "^1.2"
     },
     "require-dev": {
