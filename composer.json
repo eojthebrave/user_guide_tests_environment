@@ -25,14 +25,12 @@
         "drupal/core-composer-scaffold": "9.5.x-dev@dev",
         "drupal/core-project-message": "9.5.x-dev@dev",
         "drupal/core-recommended": "9.5.x-dev@dev",
-        "drupal/upgrade_status": "^3.18",
         "drupal/user_guide_tests": "10.0.x-dev@dev",
         "drush/drush": "^11.0",
-        "lullabot/drainpipe": "^1.2"
+        "mglaman/composer-drupal-lenient": "^1.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.2",
-        "lullabot/drainpipe-dev": "^2.0",
         "phpspec/prophecy-phpunit": "^2"
     },
     "conflict": {
@@ -48,14 +46,16 @@
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "lullabot/drainpipe": true,
-            "lullabot/drainpipe-dev": true
+            "mglaman/composer-drupal-lenient": true
         }
     },
     "extra": {
         "patches": {
             "drupal/core": {
                 "https://www.drupal.org/project/drupal/issues/2905295": "https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch"
+            },
+            "drupal/honey": {
+                "https://www.drupal.org/project/honey/issues/3329018 - Drupal 10 compatability": "https://git.drupalcode.org/project/honey/-/merge_requests/3.diff"
             }
         },
         "drupal-scaffold": {
@@ -114,6 +114,9 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "drupal-lenient": {
+            "allowed-list": ["drupal/honey", "drupal/user_guide_tests"]
         }
     }
 }
