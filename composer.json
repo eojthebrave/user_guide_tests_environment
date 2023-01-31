@@ -54,9 +54,6 @@
         "patches": {
             "drupal/core": {
                 "https://www.drupal.org/project/drupal/issues/2905295": "https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch"
-            },
-            "drupal/honey": {
-                "https://www.drupal.org/project/honey/issues/3329018 - Drupal 10 compatability": "https://git.drupalcode.org/project/honey/-/merge_requests/3.diff"
             }
         },
         "drupal-scaffold": {
