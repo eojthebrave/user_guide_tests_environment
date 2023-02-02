@@ -33,3 +33,32 @@ Edit the root composer.json from this repo with something like:
 ```
 
 More info https://www.drupal.org/docs/develop/using-composer/tricks-for-using-composer-when-developing-a-contrib-module-locally
+
+## Working with User Guide files in the container
+
+This environment also contains the tooling required to run the various build scripts for the User Guide content. In the [User Guide](https://www.drupal.og/project/user_guide) project these scripts are found in the _scripts/_ directory. And are used the build the output of the guide that's shown on Drupal.org, as well as the PDF and e-book versions.
+
+You can mount the User Guide files into the container using a _.ddev/docker-compose.local.yaml_ file like so:
+
+```yaml
+version: '3.6'
+
+services:
+  web:
+    volumes:
+      - /Users/joe/Sites/user_guide:/user_guide
+```
+
+You might need to manually install the "URW Palladio L" font if LaTex complains about it.
+
+```
+cd /usr/share/fonts/truetype
+sudo curl -I https://www.fontsplace.com/free/fonts/u/urw_palladio_l_roman.ttf
+```
+
+Then you should be able to run the build scripts like so:
+
+```
+cd /user_guide/scripts
+./mkall.sh 10.0.x en
+```

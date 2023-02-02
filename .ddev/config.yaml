@@ -13,7 +13,8 @@ mysql_version: ""
 use_dns_when_possible: true
 composer_version: ""
 web_environment: []
-
+# Tooling for building user guide content.
+webimage_extra_packages: [asciidoc, docbook, fop, calibre, dblatex, texlive-lang-all, texlive-xetex, fonts-noto-hinted, unifont, fonts-hosny-amiri, fonts-babelstone-han, fonts-takao]
 
 # This config.yaml was created with ddev version v1.17.7
 # webimage: drud/ddev-webserver:v1.17.7
