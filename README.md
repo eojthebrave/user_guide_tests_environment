@@ -53,7 +53,7 @@ You might need to manually install the "URW Palladio L" font if LaTex complains 
 
 ```
 cd /usr/share/fonts/truetype
-sudo curl -I https://www.fontsplace.com/free/fonts/u/urw_palladio_l_roman.ttf
+sudo curl -O https://www.fontsplace.com/free/fonts/u/urw_palladio_l_roman.ttf
 ```
 
 Then you should be able to run the build scripts like so:
