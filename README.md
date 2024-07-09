@@ -62,3 +62,7 @@ Then you should be able to run the build scripts like so:
 cd /user_guide/scripts
 ./mkall.sh 10.0.x en
 ```
+
+## Troubleshooting
+
+I ran into issues with the URW Palladio L font while trying to build e-books. To fix it, I edited this file _/usr/share/dblatex/latex/contrib/db2latex/param.xsl_ and changed from `URW Palladio L` to `TeX Gyre Pagella` which is part of the `tex-gyre` package installed with `sudo apt-get install tex-gyre`. And that seems to be working.
