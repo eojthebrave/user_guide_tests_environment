@@ -25,8 +25,9 @@
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10",
         "drupal/core-recommended": "^10",
+        "drupal/honey": "1.0.2",
         "drupal/user_guide_tests": "10.0.x-dev@dev",
-        "drush/drush": "^11.0",
+        "drush/drush": "^12.4",
         "mglaman/composer-drupal-lenient": "^1.0"
     },
     "require-dev": {
@@ -47,14 +48,12 @@
             "drupal/core-project-message": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "mglaman/composer-drupal-lenient": true,
-            "phpstan/extension-installer": true
+            "phpstan/extension-installer": true,
+            "php-http/discovery": true
         }
     },
     "extra": {
         "patches": {
-            "drupal/core": {
-                "https://www.drupal.org/project/drupal/issues/2905295": "https://www.drupal.org/files/issues/2019-02-26/2905295-work-around.patch"
-            }
         },
         "drupal-scaffold": {
             "locations": {
